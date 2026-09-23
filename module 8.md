@@ -196,9 +196,8 @@ Program:
 Output:
 
 
+<img width="406" height="427" alt="image" src="https://github.com/user-attachments/assets/bd5d1be8-6950-4688-a35a-d1d0ac60f723" />
 
-
-<img width="945" height="668" alt="image" src="https://github.com/user-attachments/assets/7c446b2c-7851-44cd-935f-9e5891ae45d6" />
 
 
 
@@ -248,7 +247,7 @@ Output:
 
 
 
-<img width="406" height="427" alt="image" src="https://github.com/user-attachments/assets/bd5d1be8-6950-4688-a35a-d1d0ac60f723" />
+<img width="945" height="668" alt="image" src="https://github.com/user-attachments/assets/7c446b2c-7851-44cd-935f-9e5891ae45d6" />
 
 
 
