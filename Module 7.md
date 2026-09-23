@@ -15,13 +15,35 @@ Else
 6.	Return 0
  
 Program:
+```
+#include<stdio.h> struct eligib
+{
+int age; char n[4];
+};
+int main()
+{
+struct eligib e; scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+}
+ 
+else
+{
+}
+ 
 
-//type your code here
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+ 
+
+}
+
+```
 
 
 Output:
 
-//paste your output here
+<img width="578" height="231" alt="image" src="https://github.com/user-attachments/assets/80ee79bc-c7fa-43bc-8e68-24184340618a" />
 
 
 Result:
@@ -43,16 +65,29 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include<stdio.h> struct numbers
+{
+int a; int b;
+}n;
+int add(struct numbers n); int main()
+{
 
-//type your code here
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
 
+```
 
 
 
 Output:
 
-
-//paste your output here
+<img width="211" height="246" alt="image" src="https://github.com/user-attachments/assets/0b5221e8-f509-4e73-b6f0-cc624a1e20fa" />
 
 
 
@@ -86,16 +121,21 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> int main()
+{
+FILE *p;
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name); p=fopen("name","w");
+printf("\n%s File Opened",name); fclose(p);
+printf("\n%s File Closed",name);
+}
 
+```
 
 
 
 Output:
-
-
-//paste your output here
-
 
 
 
@@ -133,15 +173,29 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> int main()
+{
+FILE *p;
+char name[20]; int num;
+char text[50]; scanf("%s%d",name,&num); p=fopen("name","w"); printf("%s Opened",name); for(int i=0;i<num;i++)
+{
+scanf("%s",text); fputs(text,p);
+}
+printf("\nData added Successfully");
 
+}
+
+
+
+```
 
 
 
 Output:
 
+<img width="499" height="259" alt="image" src="https://github.com/user-attachments/assets/e1867b6f-4501-478e-a1f3-564ed3aeaaaf" />
 
-//paste your output here
 
 
 
@@ -186,17 +240,49 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+    free (s);
+    
+    return 0;
+}
 
-//type your code here
 
+
+
+```
 
 
 
 Output:
 
 
-//paste your output here
-
+<img width="359" height="271" alt="image" src="https://github.com/user-attachments/assets/1d9ca6f6-7909-4734-9bd0-6f1f2604c07e" />
 
 
 
