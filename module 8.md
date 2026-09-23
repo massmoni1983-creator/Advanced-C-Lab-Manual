@@ -15,8 +15,21 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+      struct Node
+      {
+      int data;
+      struct Node *next;
+      }*head;
+      void display()
+      {
+      struct Node *p; p=head; while(p!=NULL)
+      {
+      printf("%d\n",p->data); p=p->next;
+      }
+      }
 
-//type your code here
+```
 
 
 
@@ -24,7 +37,7 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="207" height="266" alt="image" src="https://github.com/user-attachments/assets/4e32483d-a7ff-4fed-9483-8e8d86e1fcbd" />
 
 
 
@@ -47,15 +60,32 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+      struct Node
+      {
+      int data;
+      struct Node *next;
+      }*head; void pop()
+      {
+      if(head==NULL)
+      {
+      printf("stack is empty");
+      }
+      else
+      {
+      head=head->next;
+      }
+      }
 
+```
 
 
 
 Output:
 
 
-//paste your output here
+
+<img width="643" height="452" alt="image" src="https://github.com/user-attachments/assets/0f9e150c-744f-45c5-8a08-6ad1fbcfe0f5" />
 
 
 
@@ -84,16 +114,39 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+               struct Node
+               {
+               char data;
+               struct Node *next;
+               }*front=NULL,*rear=NULL; 
+               void display()
+               {
+               if(front==NULL)
+               {
+               printf("queue is empty");
+               }
+               else
+               {
+               printf("queue elements:\n"); 
+               while(front!=NULL)
+               {
+               printf("%c\n",front->data); 
+               front=front->next;
+               }
+               }
+               }
 
+```
 
 
 
 Output:
 
 
-//paste your output here
 
+
+<img width="399" height="423" alt="image" src="https://github.com/user-attachments/assets/90a671c0-46f2-414e-9e03-750b7dce29f0" />
 
 
 
@@ -117,16 +170,35 @@ Algorithm:
  
 Program:
 
-//type your code here
-
-
-
+```
+          struct Node
+          {
+          int data;
+          struct Node *next;
+          }*front=NULL,*rear=NULL; 
+          void enqueue(int data)
+          {
+          struct Node *p=(struct Node*)malloc(sizeof(struct Node)); 
+          p->data=data;
+          p->next=NULL; 
+          if(front==NULL)
+          {
+          front=rear=p;
+          }
+          else
+          {
+          rear->next=p; 
+          rear=p;
+          }
+          }
+```
 
 Output:
 
 
-//paste your output here
 
+
+<img width="945" height="668" alt="image" src="https://github.com/user-attachments/assets/7c446b2c-7851-44cd-935f-9e5891ae45d6" />
 
 
 
@@ -155,8 +227,19 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
+```
+          struct Node
+          {
+             char data;
+             struct Node *next;
+          }*front=NULL,*rear=NULL;
+          void peek()
+          {
+          printf("%c",front->data);
+          }
 
-//type your code here
+
+```
 
 
 
@@ -164,7 +247,8 @@ Program:
 Output:
 
 
-//paste your output here
+
+<img width="406" height="427" alt="image" src="https://github.com/user-attachments/assets/bd5d1be8-6950-4688-a35a-d1d0ac60f723" />
 
 
 
