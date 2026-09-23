@@ -16,18 +16,60 @@ Algorithm:
  
 Program:
 ```
-      struct Node
-      {
-      int data;
-      struct Node *next;
-      }*head;
-      void display()
-      {
-      struct Node *p; p=head; while(p!=NULL)
-      {
-      printf("%d\n",p->data); p=p->next;
-      }
-      }
+#include<stdio.h> #include<math.h> int main()
+{
+int n; scanf("%d",&n);
+if(n>=1 && n<=pow(4,3))
+{
+switch(n)
+{
+case 5:
+{
+printf("seventy one"); break;
+}
+case 6:
+{
+printf("seventy two"); break;
+}
+case 13:
+{
+printf("seventy three"); break;
+}
+case 14:
+{
+printf("seventy four"); break;
+}
+case 15:
+{
+printf("seventy five"); break;
+}
+case 16:
+{
+printf("seventy six"); break;
+}
+case 5:
+{
+printf("seventy seven"); break;
+}
+ 
+case 6:
+{
+printf("seventy eight"); break;
+}
+case 13:
+{
+printf("seventy nine"); break;
+}
+default:
+{
+printf("Greater than 13");
+}
+}
+}
+}
+
+
+
 
 ```
 
@@ -37,7 +79,8 @@ Program:
 Output:
 
 
-<img width="207" height="266" alt="image" src="https://github.com/user-attachments/assets/4e32483d-a7ff-4fed-9483-8e8d86e1fcbd" />
+
+<img width="494" height="130" alt="image" src="https://github.com/user-attachments/assets/2c430e81-8c22-4705-b7d2-bfae9333c815" />
 
 
 
@@ -61,21 +104,24 @@ Algorithm:
 Program:
 
 ```
-      struct Node
-      {
-      int data;
-      struct Node *next;
-      }*head; void pop()
-      {
-      if(head==NULL)
-      {
-      printf("stack is empty");
-      }
-      else
-      {
-      head=head->next;
-      }
-      }
+#include<stdio.h> #include<string.h> int main()
+{
+char a[50]; scanf("%s",a); int l=strlen(a); char h='0';
+for(int i=0;i<4;i++)
+{
+int c=0;
+for(int j=0;j<l;j++)
+{
+if(a[j]==h)
+{
+c+=1;
+}
+}
+printf("%d ",c); h++;
+}
+}
+
+
 
 ```
 
@@ -85,7 +131,8 @@ Output:
 
 
 
-<img width="643" height="452" alt="image" src="https://github.com/user-attachments/assets/0f9e150c-744f-45c5-8a08-6ad1fbcfe0f5" />
+
+<img width="369" height="179" alt="image" src="https://github.com/user-attachments/assets/77c9092c-f033-4e03-9b10-927c38d0bd5c" />
 
 
 
@@ -115,27 +162,48 @@ Free the memory allocated for each string in s Free the memory allocated for s
 Program:
 
 ```
-               struct Node
-               {
-               char data;
-               struct Node *next;
-               }*front=NULL,*rear=NULL; 
-               void display()
-               {
-               if(front==NULL)
-               {
-               printf("queue is empty");
-               }
-               else
-               {
-               printf("queue elements:\n"); 
-               while(front!=NULL)
-               {
-               printf("%c\n",front->data); 
-               front=front->next;
-               }
-               }
-               }
+#include<stdio.h> #include<string.h> #include<stdlib.h>
+int next_per(int n, char **s)
+{
+for(int i = n - 1 ; i > 0 ; i--) if(strcmp(s[i],s[i-1]) > 0)
+{
+int j=i+1;
+for(;j<n;j++) if (strcmp(s[j],s[i-1])<=0) break; char *t=s[i-1];
+s[i-1]=s[j-1];
+s[j-1]=t;
+for(;i<n-1;i++,n--)
+{
+t=s[i]; s[i]=s[n-1]; s[n-1]=t;
+}
+return 1;
+}
+for(int i=0;i<n-1;i++,n--)
+{
+char *t=s[i]; s[i]=s[n-1]; s[n-1]=t;
+}
+return 0;
+}
+int main()
+{
+char **s; int n;
+scanf("%d",&n); s=calloc(n,sizeof(char*)); for(int i=0;i<n;i++)
+{
+s[i]=calloc(n,sizeof(char*)*5); scanf("%s",s[i]);
+}
+do
+{
+for(int i=0;i<n;i++) printf("%s%c",s[i],i==n-1?'\n':' ');
+}
+while(next_per(n,s));
+ 
+{
+for(int i=0;i<n;i++) free (s[i]);
+free(s); return 0;
+}
+}
+
+
+
 
 ```
 
@@ -145,8 +213,8 @@ Output:
 
 
 
+<img width="252" height="303" alt="image" src="https://github.com/user-attachments/assets/b029a5d3-bb70-4688-a8b3-c7a4d2f1c2cc" />
 
-<img width="399" height="423" alt="image" src="https://github.com/user-attachments/assets/90a671c0-46f2-414e-9e03-750b7dce29f0" />
 
 
 
@@ -171,33 +239,32 @@ Algorithm:
 Program:
 
 ```
-          struct Node
-          {
-          int data;
-          struct Node *next;
-          }*front=NULL,*rear=NULL; 
-          void enqueue(int data)
-          {
-          struct Node *p=(struct Node*)malloc(sizeof(struct Node)); 
-          p->data=data;
-          p->next=NULL; 
-          if(front==NULL)
-          {
-          front=rear=p;
-          }
-          else
-          {
-          rear->next=p; 
-          rear=p;
-          }
-          }
+#include<stdio.h> int main()
+{
+int n,i,j,min; scanf("%d",&n);
+int len=n*2-1; for (i=0;i<len;i++)
+{
+for (j=0;j<len;j++)
+{
+min=i<j?i:j;
+min=min<len-i-1?min:len-1-i; min=min<len-j-1?min:len-1-j; printf("%d ",n-min);
+}
+printf("\n");
+}
+return 0;
+}
+
+
+
+
+
 ```
 
 Output:
 
 
-<img width="406" height="427" alt="image" src="https://github.com/user-attachments/assets/bd5d1be8-6950-4688-a35a-d1d0ac60f723" />
 
+<img width="337" height="351" alt="image" src="https://github.com/user-attachments/assets/c69e43a8-48bd-45be-b88d-531c14ceb0c7" />
 
 
 
@@ -227,15 +294,22 @@ o	Call the square() function and display the result.
 
 Program:
 ```
-          struct Node
-          {
-             char data;
-             struct Node *next;
-          }*front=NULL,*rear=NULL;
-          void peek()
-          {
-          printf("%c",front->data);
-          }
+
+#include <stdio.h>
+void square();
+int main(){
+    
+    square();
+    return 0;
+}
+void square(){
+    int a;
+    scanf("%d",&a);
+    float ans = a*a;
+    printf("The square of %d is : %.2f",a,ans);
+}
+
+
 
 
 ```
@@ -247,7 +321,8 @@ Output:
 
 
 
-<img width="945" height="668" alt="image" src="https://github.com/user-attachments/assets/7c446b2c-7851-44cd-935f-9e5891ae45d6" />
+
+<img width="747" height="239" alt="image" src="https://github.com/user-attachments/assets/761db632-1d07-4e00-9e17-05e4b378b933" />
 
 
 
