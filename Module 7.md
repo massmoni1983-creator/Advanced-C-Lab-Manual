@@ -138,8 +138,8 @@ printf("\n%s File Closed",name);
 Output:
 
 
+<img width="699" height="250" alt="image" src="https://github.com/user-attachments/assets/15ab5e0a-7259-48d4-8299-1899f267627f" />
 
-![Uploading image.png…]()
 
 
 
